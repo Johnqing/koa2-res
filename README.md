@@ -1,7 +1,7 @@
 # koa2-res
 koa2 response 增加控制函数
 
-```
+```javascript
 const koa = require('koa');
 const app = new koa();
 const router = require('koa-router')();
