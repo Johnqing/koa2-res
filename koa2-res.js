@@ -50,11 +50,11 @@ const res = (ctx, data) => {
 
 module.exports = async (ctx, next) => {
 	ctx.context_key = uuid(16, 32);
-	ctx.success = (ctx, data, code = 200, msg = 'OK') => {
+	ctx.success = (data, code = 200, msg = 'OK') => {
 		res(ctx, [code, msg, data]);
 	};
-	ctx.fail = (ctx, data, code = 400, msg = 'ERROR') =>{
-		res(ctx, [code, msg, data]);
+	ctx.fail = (code = 400, msg = 'ERROR') =>{
+		res(ctx, [code, msg]);
 	};
 	await next();
 };
